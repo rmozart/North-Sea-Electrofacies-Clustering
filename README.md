@@ -32,3 +32,4 @@ Suggestions and contributions of all kinds are very welcome. To write future cod
 ## Disclaimer
 
 The data used in this repository is licensed under the [**Norwegian open data license**](https://data.norge.no/nlod/en/2.0/). In additon, we attribute and acknowledge the [**Geolink**](https://www.geolink-s2.com/) company for providing the data.
+
