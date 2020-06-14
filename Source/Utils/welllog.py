@@ -3,7 +3,7 @@ import numpy as np
 import os
 from os import path
 import lasio
-from tqdm import tqdm
+from tqdm import tqdm_notebook
 import logging
 logging.getLogger("lasio").setLevel(logging.ERROR)
 
@@ -19,7 +19,7 @@ def read_las_directory(path_to_folder):
 
     main_name = {}
 
-    for i in tqdm(((os.listdir(path_to_folder))), desc="Reading all las files from folder"):
+    for i in tqdm_notebook(((os.listdir(path_to_folder))), desc="Reading all las files from folder"):
         main_name[os.path.splitext(i)[0]] = lasio.read(os.path.join(path_to_folder, i))
 
     return main_name
@@ -39,7 +39,7 @@ def search_and_read_las_directories(path_to_main_folder):
     main_name = {}
 
     for subdir, dirs, files in os.walk(path_to_main_folder):
-        for file in tqdm(files, desc='Reading las files from' + ' ' + subdir):
+        for file in tqdm_notebook(files, desc='Reading las files from' + ' ' + subdir):
             if os.path.splitext(file)[1] == '.las':
                 main_name[os.path.splitext(file)[0]] = lasio.read(os.path.join(subdir, file))
     
