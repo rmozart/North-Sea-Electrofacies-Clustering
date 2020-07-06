@@ -15,9 +15,9 @@ def classify_outliers(df):
 
     ranges = {}
 
-    ranges['CALI'] = [0, 30]
+    ranges['CALI'] = [5, 30]
 
-    ranges['NPHI'] = [0, 1] 
+    ranges['NPHI'] = [0.1, 0.65] 
 
     ranges['RHOB'] = [1, 4] 
 
