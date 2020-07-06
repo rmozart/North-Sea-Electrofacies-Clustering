@@ -19,7 +19,7 @@ def classify_outliers(df):
 
     ranges['NPHI'] = [0.1, 0.65] 
 
-    ranges['RHOB'] = [1, 4] 
+    ranges['RHOB'] = [1, 3.5] 
 
     ranges['GR'] = [0, 200]
 
