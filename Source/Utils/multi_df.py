@@ -35,3 +35,23 @@ def classify_outliers(df):
                     df.at[idx, 'Number of Outliers'] = df['Number of Outliers'][idx] + 1
 
     return df 
+
+def nphi_filtering(df):
+
+    for id in df['WELL_NAME'].unique():
+
+        mean = df[df['WELL_NAME'] == id]['NPHI'].mean()
+            
+        if mean > 1:
+
+            df.loc[df['WELL_NAME'] == id,['NPHI']] = df.loc[df['WELL_NAME'] == id,['NPHI']]/100
+
+        else:
+
+            for idx in df[df['WELL_NAME'] == id].index:
+
+                if df[df['WELL_NAME'] == id]['NPHI'][idx] > 1:
+                    
+                    df[df['WELL_NAME'] == id].drop(index=idx, inplace=True)
+
+    return df
