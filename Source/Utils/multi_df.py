@@ -27,6 +27,8 @@ def classify_outliers(df):
 
     ranges['RDEP'] = [0.0001, 6000]
 
+    ranges['RMED'] = [0.0001, 6000] 
+
     for curve in df.columns:
         for idx in df.index:
             if curve not in ['Number of Outliers', 'LITHOLOGY_GEOLINK', 'WELL_NAME', 'DEPTH']:
